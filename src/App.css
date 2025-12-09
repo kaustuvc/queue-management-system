@@ -47,6 +47,8 @@ main {
   background: var(--surface);
   padding: 1.5rem;
   border-radius: 8px;
+  margin: 40px;
+  width: fit-content;
   height: fit-content;
 }
 

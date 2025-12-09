@@ -4,13 +4,13 @@ import QueueForm from './components/QueueForm.jsx'
 
 function App() {
   const [queue, setQueue] = useState(0)
-  const enQueue = () => {
-
+  const enQueue = (customer) => {
+    setQueue([...queue, {...customer, id: Date.now(), status: 'waiting'}])
   }
-  const updateStatus = () => {
+  const updateStatus = (id, status) => {
     
   }
-  const deQueue = () => {
+  const deQueue = (id) => {
 
   }
   return (
@@ -19,7 +19,8 @@ function App() {
       <h1>Queue Management System</h1>
       <p>Manage your customers efficiently</p>
     </header>
-    <QueueForm />
+    <QueueForm onAdd={enQueue}/>
+    Display component
    </div>
   )
 }
