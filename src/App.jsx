@@ -30,6 +30,9 @@ function App() {
       delItem={deQueue}
       />
     </main>
+    <footer>
+      <p>v0.0.0</p>
+    </footer>
    </>
   )
 }
