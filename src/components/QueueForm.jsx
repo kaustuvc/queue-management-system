@@ -35,7 +35,7 @@ export default function QueueForm ({onAdd}) {
                     <option value="Support">Support</option>
                 </select>
             </div>
-            <button type="submit"> <FaUserPlus /> Add customer</button>
+            <button type="submit" onClick={(e) => {handleSubmit(e)}}> <FaUserPlus /> Add customer</button>
         </form>
     </>
     )

@@ -47,8 +47,7 @@ main {
   background: var(--surface);
   padding: 1.5rem;
   border-radius: 8px;
-  margin: 40px;
-  width: fit-content;
+  margin-left: 40px;
   height: fit-content;
 }
 
@@ -112,7 +111,14 @@ button:hover {
 .queue-display {
   background: var(--surface);
   padding: 1.5rem;
+  margin-right: 40px;
   border-radius: 8px;
+}
+
+.queue-display h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
 }
 
 .queue-list {

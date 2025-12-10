@@ -1,27 +1,36 @@
 import { useState } from 'react'
 import './App.css'
 import QueueForm from './components/QueueForm.jsx'
+import QueueDisplay from './components/QueueDisplay.jsx'
 
 function App() {
-  const [queue, setQueue] = useState(0)
+  const [queue, setQueue] = useState([])
   const enQueue = (customer) => {
     setQueue([...queue, {...customer, id: Date.now(), status: 'waiting'}])
   }
-  const updateStatus = (id, status) => {
-    
+  const updateStatus = (id, newStatus) => {
+    setQueue(queue.map(customer => ( //() used instead of {} as () does explicit return automatically - Debug1
+      customer.id === id ? {...customer, status: newStatus} : customer
+    )))
   }
   const deQueue = (id) => {
-
+    setQueue(queue.filter(customer => customer.id !== id))
   }
   return (
-   <div>
+   <>
     <header>
       <h1>Queue Management System</h1>
       <p>Manage your customers efficiently</p>
     </header>
-    <QueueForm onAdd={enQueue}/>
-    Display component
-   </div>
+    <main>
+      <QueueForm onAdd={enQueue}/>
+      <QueueDisplay 
+      queue={queue}
+      updateItem={updateStatus}
+      delItem={deQueue}
+      />
+    </main>
+   </>
   )
 }
 
