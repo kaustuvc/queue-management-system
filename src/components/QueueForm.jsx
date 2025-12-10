@@ -18,7 +18,8 @@ export default function QueueForm ({onAdd}) {
         <form className="queue-form">
             <h2>Add to queue</h2>
             <div className="form-group">
-                <input 
+                <input
+                name="Enter customer name" 
                 placeholder="Customer name" 
                 type="text"
                 value={name}
@@ -26,6 +27,8 @@ export default function QueueForm ({onAdd}) {
             </div>
             <div className="form-group">
                 <select
+                name="Select service"
+                title="Service"
                 value={service}
                 onChange={(e) => {setService(e.target.value)}}
                 >
